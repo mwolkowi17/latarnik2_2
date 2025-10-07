@@ -1,0 +1,28 @@
+{
+  "pozycjeOdpowiedzi": [
+    [
+      { "top": "786px", "left": "32px" },
+      { "top": "786px", "left": "675px" },
+      { "top": "930px", "left": "32px" },
+      { "top": "930px", "left": "675px" }
+    ],
+    [
+      { "top": "930px", "left": "675px" },
+      { "top": "930px", "left": "32px" },
+      { "top": "786px", "left": "32px" },
+      { "top": "786px", "left": "675px" }
+    ],
+    [
+      { "top": "786px", "left": "675px" },
+      { "top": "786px", "left": "32px" },
+      { "top": "930px", "left": "675px" },
+      { "top": "930px", "left": "32px" }
+    ],
+    [
+      { "top": "930px", "left": "675px" },
+      { "top": "786px", "left": "675px" },
+      { "top": "930px", "left": "32px" },
+      { "top": "786px", "left": "32px" }
+    ]
+  ]
+}
