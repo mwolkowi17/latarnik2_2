@@ -143,16 +143,40 @@ function KoloWymien() {
     }
 }
 
+function KoloWymienWithFocus(event: Event){
+    event.preventDefault()
+    if (!storeKola.ifSkorzystałZKola) {
+        storeKola.WymienPytanie()
+    }
+    pytanieRef.value?.focus()
+}
+
 function KoloSeventy() {
     if (!storeKola.ifSkorzystałZKola) {
         storeKola.UsunJedna()
     }
 }
 
+function KoloSeventyWithFocus(event: Event){
+   event.preventDefault()
+    if (!storeKola.ifSkorzystałZKola) {
+        storeKola.UsunJedna()
+    }
+    pytanieRef.value?.focus()
+}
+
 function KoloFifty() {
     if (!storeKola.ifSkorzystałZKola) {
         storeKola.UsunDwie()
     }
+}
+
+function KoloFiftyWithFocus(event: Event){
+    event.preventDefault()
+     if (!storeKola.ifSkorzystałZKola) {
+        storeKola.UsunDwie()
+    }
+    pytanieRef.value?.focus()
 }
 
 
@@ -171,28 +195,28 @@ function PlayTimer() {
 
 <template>
     <div class="tlo">
-        <button class="button-zagraj-jeszcze my-button" @click="JeszczRaz">Zagraj jeszcze raz</button>
+        <button class="button-zagraj-jeszcze my-button" @click="JeszczRaz" >Zagraj jeszcze raz</button>
         <!-- <div class="kola-elementy">
             <div class="elipsa elipsa-podpowiedz">
                 <img src="../assets/podpowiedz.png" alt="wymien pytanie" width="103px" height="78px" />
             </div>
         </div> -->
         <div class="kola-elementy " v-if="storeKola.ifWymien">
-            <div class="elipsa elipsa-wymien my-button" @click="KoloWymien" tabindex="0">
+            <div class="elipsa elipsa-wymien my-button" @click="KoloWymien" @keydown.enter="KoloWymienWithFocus" tabindex="0">
                 <p>
                     <img src="../assets/wymien.png" alt="wymien pytanie" width="60px" height="100px" />
                 </p>
             </div>
         </div>
         <div class="kola-elementy" v-if="storeKola.ifSeventy">
-            <div class="elipsa elipsa-seven my-button" @click="KoloSeventy" tabindex="0">
+            <div class="elipsa elipsa-seven my-button" @click="KoloSeventy" @keydown.enter="KoloSeventyWithFocus" tabindex="0">
                 <p>
                     75:100
                 </p>
             </div>
         </div>
         <div class="kola-elementy" v-if="storeKola.ifFifty">
-            <div class="elipsa elipsa-fifty my-button" @click="KoloFifty" tabindex="0">
+            <div class="elipsa elipsa-fifty my-button" @click="KoloFifty" @keydown.enter="KoloFiftyWithFocus" tabindex="0">
                 <p>
                     50:50
                 </p>
@@ -227,8 +251,7 @@ function PlayTimer() {
         </button>
 
         <div class="container-punktacja">
-            <div class="ramka-punktacja" :style="{ top: storeSceneMain.ramkaPunktacjaWysokosc + 'px' }" tabindex="0">
-            </div>
+            
             <div class="licznik-czasu" tabindex="0">
                 <p class="licznik-display">
                     {{ storeTime.formattedTime }}
@@ -236,6 +259,8 @@ function PlayTimer() {
             </div>
             <button class="my-button button-pauza" @click="PauseTimer">Pauza</button>
             <button class="my-button button-kontynuj" @click="PlayTimer">Kontynuj</button>
+            <div class="ramka-punktacja" :style="{ top: storeSceneMain.ramkaPunktacjaWysokosc + 'px' }" tabindex="0">
+            </div>
             <div class="container-points">
                 <div class="punktacja-row">
                     <p class="napis-punktacja">10</p>
