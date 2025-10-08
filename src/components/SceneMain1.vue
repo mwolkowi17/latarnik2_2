@@ -7,13 +7,17 @@ import { useTimerStore } from '../stores/timerStore';
 import { useMainCompStore } from '../stores/mainCompStore';
 import { useKolaStore } from '../stores/storeKola';
 import { useFocusStore } from '../stores/focusStore';
-import { nextTick, onMounted, onUnmounted, useTemplateRef } from 'vue';
+import { metodyPomocnicze } from '../lib/metody-pomocnicze';
+import { nextTick, onMounted, onUnmounted, useTemplateRef, ref } from 'vue';
 
 const storeSceneMain = useSceneStore();
 const storeTime = useTimerStore();
 const storeMainComp = useMainCompStore()
 const storeKola = useKolaStore()
 const storeFocus = useFocusStore()
+
+//nr zestay pytań
+const nrZetawuPytanScena1 = ref(0)
 
 //referencje do el html używane do obsługi focusa
 const pytanieRef = useTemplateRef('pytanie')
@@ -22,8 +26,7 @@ const odpowiedz2Ref = useTemplateRef('odp2-ref')
 const odpowiedz3Ref = useTemplateRef('odp3-ref')
 const odpowiedz4Ref = useTemplateRef('odp4-ref')
 
-
-onMounted(() => {
+onMounted(async () => {
     storeSceneMain.pytanieTempRef = pytanieRef.value
     storeSceneMain.addQuestionLevel1()
     storeTime.startTimerValue()
@@ -31,6 +34,21 @@ onMounted(() => {
     if (storeFocus.ifPytanieInFocus) {
         pytanieRef.value?.focus()
     }
+
+    //nowy koncept zestawów pytań
+    await nextTick()
+    nrZetawuPytanScena1.value = metodyPomocnicze.wybierzZestawPytan();
+     await nextTick()
+    if (nrZetawuPytanScena1.value === 1) {
+        storeSceneMain.kolekcjaPytan = storeSceneMain.kolekcjaPytanB
+    }
+    if (nrZetawuPytanScena1.value === 2) {
+        storeSceneMain.kolekcjaPytan = storeSceneMain.kolekcjaPytanC
+    }
+     await nextTick()
+    console.log(nrZetawuPytanScena1.value)
+     await nextTick()
+    console.log(storeSceneMain.kolekcjaPytan)
 
 })
 

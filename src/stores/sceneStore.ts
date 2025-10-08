@@ -16,7 +16,7 @@ export const useSceneStore = defineStore("storeScene1", () => {
   const storeKola = useKolaStore();
   const storeFocus = useFocusStore();
 
-  //sterowanie komponentami głównej sceny
+  //sterowanie komponentami sceny
   const ifPodpowiedz = ref(false);
   const ifPrawidlowaOdpowiedz = ref(false);
   const ifZlaOdpowiedz = ref(false);
@@ -31,8 +31,7 @@ export const useSceneStore = defineStore("storeScene1", () => {
   //refy do elementów
   const pytanieTempRef = ref<HTMLElement | null>(null);
 
-  //położenie odpowiedzi
-
+  //położenie odpowiedzi, po zmianach położenie odpowiedzi jest stałe, ale na razie zostawiam...
   const nrKolekcjiPolozenPytan = ref(0);
 
   const odpowiedz1Polozenie = ref([
@@ -62,6 +61,7 @@ export const useSceneStore = defineStore("storeScene1", () => {
     polozenieOdpowiedzi.pozycjeOdpowiedzi[nrKolekcjiPolozenPytan.value]?.[3]
       ?.left ?? "",
   ]);
+
   //położenie ramki punktacji
   const ramkaPunktacjaWysokosc = ref(pointsPosition.pozycjaRamki[0]);
 
@@ -70,6 +70,8 @@ export const useSceneStore = defineStore("storeScene1", () => {
 
   // właściwości dot pytań
   const kolekcjaPytan = ref(gameData.poziom1);
+  const kolekcjaPytanB = ref(gameData.poziom1b);
+  const kolekcjaPytanC = ref(gameData.poziom1c);
   const pytanie = ref("pytanie");
   const odpowiedz1 = ref("odpowiedz1");
   const odpowiedz2 = ref("odpowiedz2");
@@ -82,34 +84,7 @@ export const useSceneStore = defineStore("storeScene1", () => {
 
   //metoda dodajaca losowo pytania
   async function addQuestionLevel1() {
-    nrKolekcjiPolozenPytan.value = metodyPomocnicze.losujPozycje();
-    await nextTick();
-    odpowiedz1Polozenie.value = [
-      polozenieOdpowiedzi.pozycjeOdpowiedzi[nrKolekcjiPolozenPytan.value]?.[0]
-        ?.top ?? "",
-      polozenieOdpowiedzi.pozycjeOdpowiedzi[nrKolekcjiPolozenPytan.value]?.[0]
-        ?.left ?? "",
-    ];
-    odpowiedz2Polozenie.value = [
-      polozenieOdpowiedzi.pozycjeOdpowiedzi[nrKolekcjiPolozenPytan.value]?.[1]
-        ?.top ?? "",
-      polozenieOdpowiedzi.pozycjeOdpowiedzi[nrKolekcjiPolozenPytan.value]?.[1]
-        ?.left ?? "",
-    ];
-    odpowiedz3Polozenie.value = [
-      polozenieOdpowiedzi.pozycjeOdpowiedzi[nrKolekcjiPolozenPytan.value]?.[2]
-        ?.top ?? "",
-      polozenieOdpowiedzi.pozycjeOdpowiedzi[nrKolekcjiPolozenPytan.value]?.[2]
-        ?.left ?? "",
-    ];
-    odpowiedz4Polozenie.value = [
-      polozenieOdpowiedzi.pozycjeOdpowiedzi[nrKolekcjiPolozenPytan.value]?.[3]
-        ?.top ?? "",
-      polozenieOdpowiedzi.pozycjeOdpowiedzi[nrKolekcjiPolozenPytan.value]?.[3]
-        ?.left ?? "",
-    ];
-
-    await nextTick();
+    //await nextTick();
     ifOdpowiedz1.value = true;
     ifOdpowiedz2.value = true;
     ifOdpowiedz3.value = true;
@@ -129,7 +104,6 @@ export const useSceneStore = defineStore("storeScene1", () => {
     odpowiedz4.value = kolekcjaPytan.value[pytanieNr]?.odpowiedz4 ?? "";
     nrOdpowiedziDobrej.value =
       Number(kolekcjaPytan.value[pytanieNr]?.prawidlowa_odpowiedz) || 0;
-    //wybranaOdpowiedz.value = nrWybranegoPytania;
 
     await nextTick();
     function pytanieNrindex(_: (typeof kolekcjaPytan.value)[0], index: number) {
@@ -141,6 +115,7 @@ export const useSceneStore = defineStore("storeScene1", () => {
     await nextTick();
     console.log("oczekiwana odpowiedz:" + nrOdpowiedziDobrej.value);
 
+    //to tylko informacyjne w wer developerskiej, na produkcji usunąć
     if (nrKolejki.value === 5) {
       console.log("koniec etapu1");
     }
@@ -179,7 +154,6 @@ export const useSceneStore = defineStore("storeScene1", () => {
   }
 
   //obsługa odpowiedzi
-
   async function Odpowiedz1(buttonNumber: number) {
     sprawdzOdpowiedz(buttonNumber);
     await nextTick();
@@ -187,6 +161,7 @@ export const useSceneStore = defineStore("storeScene1", () => {
       setTimeout(() => {
         addQuestionLevel1();
         ifPrawidlowaOdpowiedz.value = false;
+        //obsluga focusa
         if (storeFocus.ifPytanieInFocus) {
           pytanieTempRef.value?.focus();
         }
@@ -202,6 +177,7 @@ export const useSceneStore = defineStore("storeScene1", () => {
       }, 3000);
     } else {
       setTimeout(() => {
+        //obsluga focusa
         if (storeFocus.ifPytanieInFocus) {
           storeFocus.ifPrzegranaSilverInFocus = true;
         }
@@ -212,6 +188,7 @@ export const useSceneStore = defineStore("storeScene1", () => {
     }
   }
 
+  //metoda resetująca scenę
   async function ResetScene() {
     await nextTick();
     licznikPunktacja.value = 0;
@@ -227,6 +204,9 @@ export const useSceneStore = defineStore("storeScene1", () => {
     ifPrawidlowaOdpowiedz,
     ifZlaOdpowiedz,
     ramkaPunktacjaWysokosc,
+    kolekcjaPytan,
+    kolekcjaPytanB,
+    kolekcjaPytanC,
     pytanie,
     pytanieTempRef,
     ifOdpowiedz1,

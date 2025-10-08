@@ -31,8 +31,7 @@ export const useScene2Store = defineStore("storeScene2", () => {
   //refy do elementów
   const pytanieTempRef = ref<HTMLElement | null>(null);
 
-  //położenie odpowiedzi
-
+  //położenie odpowiedzi, po zmianach położenie odpowiedzi jest stałe, ale na razie zostawiam...
   const nrKolekcjiPolozenPytan = ref(0);
 
   const odpowiedz1Polozenie = ref([
@@ -71,6 +70,8 @@ export const useScene2Store = defineStore("storeScene2", () => {
 
   // właściwości dot pytań
   const kolekcjaPytan = ref(gameData.poziom2);
+  const kolekcjaPytanB = ref(gameData.poziom2b);
+  const kolekcjaPytanC = ref(gameData.poziom2c);
   const pytanie = ref("pytanie");
   const odpowiedz1 = ref("odpowiedz1");
   const odpowiedz2 = ref("odpowiedz2");
@@ -84,34 +85,7 @@ export const useScene2Store = defineStore("storeScene2", () => {
 
   //metoda dodajaca losowo pytania
   async function addQuestionLevel1() {
-    nrKolekcjiPolozenPytan.value = metodyPomocnicze.losujPozycje();
-    await nextTick();
-    odpowiedz1Polozenie.value = [
-      polozenieOdpowiedzi.pozycjeOdpowiedzi[nrKolekcjiPolozenPytan.value]?.[0]
-        ?.top ?? "",
-      polozenieOdpowiedzi.pozycjeOdpowiedzi[nrKolekcjiPolozenPytan.value]?.[0]
-        ?.left ?? "",
-    ];
-    odpowiedz2Polozenie.value = [
-      polozenieOdpowiedzi.pozycjeOdpowiedzi[nrKolekcjiPolozenPytan.value]?.[1]
-        ?.top ?? "",
-      polozenieOdpowiedzi.pozycjeOdpowiedzi[nrKolekcjiPolozenPytan.value]?.[1]
-        ?.left ?? "",
-    ];
-    odpowiedz3Polozenie.value = [
-      polozenieOdpowiedzi.pozycjeOdpowiedzi[nrKolekcjiPolozenPytan.value]?.[2]
-        ?.top ?? "",
-      polozenieOdpowiedzi.pozycjeOdpowiedzi[nrKolekcjiPolozenPytan.value]?.[2]
-        ?.left ?? "",
-    ];
-    odpowiedz4Polozenie.value = [
-      polozenieOdpowiedzi.pozycjeOdpowiedzi[nrKolekcjiPolozenPytan.value]?.[3]
-        ?.top ?? "",
-      polozenieOdpowiedzi.pozycjeOdpowiedzi[nrKolekcjiPolozenPytan.value]?.[3]
-        ?.left ?? "",
-    ];
-
-    await nextTick();
+    //await nextTick();
     ifOdpowiedz1.value = true;
     ifOdpowiedz2.value = true;
     ifOdpowiedz3.value = true;
@@ -191,6 +165,7 @@ export const useScene2Store = defineStore("storeScene2", () => {
       setTimeout(() => {
         addQuestionLevel1();
         ifPrawidlowaOdpowiedz.value = false;
+        //obsługa focusa
         if (storeFocus.ifPytanieInFocus) {
           pytanieTempRef.value?.focus();
         }
@@ -206,6 +181,7 @@ export const useScene2Store = defineStore("storeScene2", () => {
       }, 3000);
     } else {
       setTimeout(() => {
+        //obsługa focusa
         if (storeFocus.ifPytanieInFocus) {
           storeFocus.ifPrzegranaSilverInFocus = true;
         }
@@ -215,7 +191,7 @@ export const useScene2Store = defineStore("storeScene2", () => {
       }, 3000);
     }
   }
-
+  // metoda resetująca scenę
   function ResetScene() {
     licznikPunktacja.value = 5;
     ramkaPunktacjaWysokosc.value = pointsPosition.pozycjaRamki[5];
@@ -229,6 +205,9 @@ export const useScene2Store = defineStore("storeScene2", () => {
     ifPrawidlowaOdpowiedz,
     ifZlaOdpowiedz,
     ramkaPunktacjaWysokosc,
+    kolekcjaPytan,
+    kolekcjaPytanB,
+    kolekcjaPytanC,
     pytanie,
     pytanieTempRef,
     ifOdpowiedz1,
