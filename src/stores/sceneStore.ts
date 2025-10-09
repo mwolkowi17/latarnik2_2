@@ -198,6 +198,28 @@ export const useSceneStore = defineStore("storeScene1", () => {
     }
   }
 
+  //metoda podająca punktację do czytnika nvda
+
+  function czytajPunkty() {
+    let puntkyCzytaj = "";
+    if (ramkaPunktacjaWysokosc.value === pointsPosition.pozycjaRamki[0]) {
+      puntkyCzytaj = "odpowiedź za jedną srebrną monetę";
+    }
+    if (ramkaPunktacjaWysokosc.value === pointsPosition.pozycjaRamki[1]) {
+      puntkyCzytaj = "odpowiedź za dwie srebrne monety";
+    }
+    if (ramkaPunktacjaWysokosc.value === pointsPosition.pozycjaRamki[2]) {
+      puntkyCzytaj = "odpowiedź za trzy srebrne monety";
+    }
+    if (ramkaPunktacjaWysokosc.value === pointsPosition.pozycjaRamki[3]) {
+      puntkyCzytaj = "odpowiedź za cztery srebrne monety";
+    }
+    if (ramkaPunktacjaWysokosc.value === pointsPosition.pozycjaRamki[4]) {
+      puntkyCzytaj = "odpowiedź premiowana srebrnym pucharem";
+    }
+    return puntkyCzytaj;
+  }
+
   //metoda resetująca scenę
   async function ResetScene() {
     await nextTick();
@@ -244,6 +266,7 @@ export const useSceneStore = defineStore("storeScene1", () => {
     sprawdzOdpowiedz,
     ramkaPunktyMove,
     Odpowiedz1,
+    czytajPunkty,
     ResetScene,
   };
 });

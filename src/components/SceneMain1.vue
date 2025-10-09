@@ -259,7 +259,7 @@ function PlayTimer() {
         </div> -->
         <div class="kola-elementy " v-if="storeKola.ifWymien">
             <div class="elipsa elipsa-wymien my-button" @click="KoloWymien" @keydown.enter="KoloWymienWithFocus"
-                tabindex="0">
+                tabindex="0" aria-label="koło ratunkowe - wymiana pytania">
                 <p>
                     <img src="../assets/wymien.png" alt="wymien pytanie" width="60px" height="100px" />
                 </p>
@@ -267,7 +267,7 @@ function PlayTimer() {
         </div>
         <div class="kola-elementy" v-if="storeKola.ifSeventy">
             <div class="elipsa elipsa-seven my-button" @click="KoloSeventy" @keydown.enter="KoloSeventyWithFocus"
-                tabindex="0">
+                tabindex="0" aria-label="koło ratunkowe - usunięcie jednej złej odpowiedzi">
                 <p>
                     75:100
                 </p>
@@ -275,7 +275,7 @@ function PlayTimer() {
         </div>
         <div class="kola-elementy" v-if="storeKola.ifFifty">
             <div class="elipsa elipsa-fifty my-button" @click="KoloFifty" @keydown.enter="KoloFiftyWithFocus"
-                tabindex="0">
+                tabindex="0" aria-label="koło ratunkowe - usunięcie dwóch złych odpowiedzi">
                 <p>
                     50:50
                 </p>
@@ -309,14 +309,16 @@ function PlayTimer() {
 
         <div class="container-punktacja">
 
-            <div class="licznik-czasu" tabindex="0">
+            <div class="licznik-czasu" tabindex="0" :aria-label="storeTime.timeScene1Local.toString()">
+                
                 <p class="licznik-display">
                     {{ storeTime.formattedTime }}
                 </p>
             </div>
             <button class="my-button button-pauza" @click="PauseTimer">Pauza</button>
             <button class="my-button button-kontynuj" @click="PlayTimer">Kontynuj</button>
-            <div class="ramka-punktacja" :style="{ top: storeSceneMain.ramkaPunktacjaWysokosc + 'px' }" tabindex="0">
+            <div class="ramka-punktacja" :style="{ top: storeSceneMain.ramkaPunktacjaWysokosc + 'px' }" 
+            tabindex="0" :aria-label="storeSceneMain.czytajPunkty()">
             </div>
             <div class="container-points">
                 <div class="punktacja-row">
