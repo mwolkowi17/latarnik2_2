@@ -82,6 +82,12 @@ export const useSceneStore = defineStore("storeScene1", () => {
 
   const nrKolejki = ref(0);
 
+  //właściwości koloru punktacji
+  const backgroundColorOdpowiedz1 = ref("#D7E2F1");
+  const backgroundColorOdpowiedz2 = ref("#D7E2F1");
+  const backgroundColorOdpowiedz3 = ref("#D7E2F1");
+  const backgroundColorOdpowiedz4 = ref("#D7E2F1");
+
   //metoda dodajaca losowo pytania
   async function addQuestionLevel1() {
     //await nextTick();
@@ -89,6 +95,10 @@ export const useSceneStore = defineStore("storeScene1", () => {
     ifOdpowiedz2.value = true;
     ifOdpowiedz3.value = true;
     ifOdpowiedz4.value = true;
+    backgroundColorOdpowiedz1.value = "#D7E2F1";
+    backgroundColorOdpowiedz2.value = "#D7E2F1";
+    backgroundColorOdpowiedz3.value = "#D7E2F1";
+    backgroundColorOdpowiedz4.value = "#D7E2F1";
     //const kolekcjaPytan = gameData.poziom1;
     let iloscElementowKolekcjiPytan = gameData.poziom1.length - nrKolejki.value;
     let pytanieNr: number;
@@ -217,6 +227,10 @@ export const useSceneStore = defineStore("storeScene1", () => {
     odpowiedz2,
     odpowiedz3,
     odpowiedz4,
+    backgroundColorOdpowiedz1,
+    backgroundColorOdpowiedz2,
+    backgroundColorOdpowiedz3,
+    backgroundColorOdpowiedz4,
     nrKolekcjiPolozenPytan,
     odpowiedz1Polozenie,
     odpowiedz2Polozenie,

@@ -38,16 +38,16 @@ onMounted(async () => {
     //nowy koncept zestawów pytań
     await nextTick()
     nrZetawuPytanScena1.value = metodyPomocnicze.wybierzZestawPytan();
-     await nextTick()
+    await nextTick()
     if (nrZetawuPytanScena1.value === 1) {
         storeSceneMain.kolekcjaPytan = storeSceneMain.kolekcjaPytanB
     }
     if (nrZetawuPytanScena1.value === 2) {
         storeSceneMain.kolekcjaPytan = storeSceneMain.kolekcjaPytanC
     }
-     await nextTick()
+    await nextTick()
     console.log(nrZetawuPytanScena1.value)
-     await nextTick()
+    await nextTick()
     console.log(storeSceneMain.kolekcjaPytan)
 
 })
@@ -70,6 +70,13 @@ async function odpowiedz1Click() {
     storeFocus.focusOff()
     await nextTick()
     storeSceneMain.Odpowiedz1(1)
+    await nextTick()
+    if(storeSceneMain.ifPrawidlowaOdpowiedz){
+        storeSceneMain.backgroundColorOdpowiedz1="#0BB717"
+    }
+    else{
+        storeSceneMain.backgroundColorOdpowiedz1="#F48506"
+    }
     storeTime.isPaused = true
     odpowiedz1Ref.value?.blur()
 }
@@ -80,6 +87,13 @@ async function odpowiedz1ClickWithFocus(event: any) {
     await nextTick()
     console.log('odp1')
     storeSceneMain.Odpowiedz1(1)
+     await nextTick()
+    if(storeSceneMain.ifPrawidlowaOdpowiedz){
+        storeSceneMain.backgroundColorOdpowiedz1="#0BB717"
+    }
+    else{
+        storeSceneMain.backgroundColorOdpowiedz1="#F48506"
+    }
     storeTime.isPaused = true
 }
 
@@ -88,6 +102,13 @@ async function odpowiedz2Click() {
     await nextTick()
     console.log('odp2')
     storeSceneMain.Odpowiedz1(2)
+     await nextTick()
+    if(storeSceneMain.ifPrawidlowaOdpowiedz){
+        storeSceneMain.backgroundColorOdpowiedz2="#0BB717"
+    }
+    else{
+        storeSceneMain.backgroundColorOdpowiedz2="#F48506"
+    }
     storeTime.isPaused = true
     odpowiedz2Ref.value?.blur()
 }
@@ -98,6 +119,13 @@ async function odpowiedz2ClickWithFocus(event: any) {
     await nextTick()
     console.log('odp2')
     storeSceneMain.Odpowiedz1(2)
+     await nextTick()
+    if(storeSceneMain.ifPrawidlowaOdpowiedz){
+        storeSceneMain.backgroundColorOdpowiedz2="#0BB717"
+    }
+    else{
+        storeSceneMain.backgroundColorOdpowiedz2="#F48506"
+    }
     storeTime.isPaused = true
 }
 
@@ -106,6 +134,13 @@ async function odpowiedz3Click() {
     await nextTick()
     console.log('odp3')
     storeSceneMain.Odpowiedz1(3)
+     await nextTick()
+    if(storeSceneMain.ifPrawidlowaOdpowiedz){
+        storeSceneMain.backgroundColorOdpowiedz3="#0BB717"
+    }
+    else{
+        storeSceneMain.backgroundColorOdpowiedz3="#F48506"
+    }
     storeTime.isPaused = true
     odpowiedz3Ref.value?.blur()
 }
@@ -116,6 +151,13 @@ async function odpowiedz3ClickWithFocus(event: any) {
     await nextTick()
     console.log('odp3')
     storeSceneMain.Odpowiedz1(3)
+     await nextTick()
+    if(storeSceneMain.ifPrawidlowaOdpowiedz){
+        storeSceneMain.backgroundColorOdpowiedz3="#0BB717"
+    }
+    else{
+        storeSceneMain.backgroundColorOdpowiedz3="#F48506"
+    }
     storeTime.isPaused = true
 }
 
@@ -124,6 +166,13 @@ async function odpowiedz4Click() {
     await nextTick()
     console.log('odp4')
     storeSceneMain.Odpowiedz1(4)
+     await nextTick()
+    if(storeSceneMain.ifPrawidlowaOdpowiedz){
+        storeSceneMain.backgroundColorOdpowiedz4="#0BB717"
+    }
+    else{
+        storeSceneMain.backgroundColorOdpowiedz4="#F48506"
+    }
     storeTime.isPaused = true
     odpowiedz4Ref.value?.blur()
 }
@@ -134,6 +183,13 @@ async function odpowiedz4ClickWithFocus(event: any) {
     await nextTick()
     console.log('odp4')
     storeSceneMain.Odpowiedz1(4)
+     await nextTick()
+    if(storeSceneMain.ifPrawidlowaOdpowiedz){
+        storeSceneMain.backgroundColorOdpowiedz4="#0BB717"
+    }
+    else{
+        storeSceneMain.backgroundColorOdpowiedz4="#F48506"
+    }
     storeTime.isPaused = true
 }
 
@@ -143,7 +199,7 @@ function KoloWymien() {
     }
 }
 
-function KoloWymienWithFocus(event: Event){
+function KoloWymienWithFocus(event: Event) {
     event.preventDefault()
     if (!storeKola.ifSkorzystałZKola) {
         storeKola.WymienPytanie()
@@ -157,8 +213,8 @@ function KoloSeventy() {
     }
 }
 
-function KoloSeventyWithFocus(event: Event){
-   event.preventDefault()
+function KoloSeventyWithFocus(event: Event) {
+    event.preventDefault()
     if (!storeKola.ifSkorzystałZKola) {
         storeKola.UsunJedna()
     }
@@ -171,9 +227,9 @@ function KoloFifty() {
     }
 }
 
-function KoloFiftyWithFocus(event: Event){
+function KoloFiftyWithFocus(event: Event) {
     event.preventDefault()
-     if (!storeKola.ifSkorzystałZKola) {
+    if (!storeKola.ifSkorzystałZKola) {
         storeKola.UsunDwie()
     }
     pytanieRef.value?.focus()
@@ -195,28 +251,31 @@ function PlayTimer() {
 
 <template>
     <div class="tlo">
-        <button class="button-zagraj-jeszcze my-button" @click="JeszczRaz" >Zagraj jeszcze raz</button>
+        <button class="button-zagraj-jeszcze my-button" @click="JeszczRaz">Zagraj jeszcze raz</button>
         <!-- <div class="kola-elementy">
             <div class="elipsa elipsa-podpowiedz">
                 <img src="../assets/podpowiedz.png" alt="wymien pytanie" width="103px" height="78px" />
             </div>
         </div> -->
         <div class="kola-elementy " v-if="storeKola.ifWymien">
-            <div class="elipsa elipsa-wymien my-button" @click="KoloWymien" @keydown.enter="KoloWymienWithFocus" tabindex="0">
+            <div class="elipsa elipsa-wymien my-button" @click="KoloWymien" @keydown.enter="KoloWymienWithFocus"
+                tabindex="0">
                 <p>
                     <img src="../assets/wymien.png" alt="wymien pytanie" width="60px" height="100px" />
                 </p>
             </div>
         </div>
         <div class="kola-elementy" v-if="storeKola.ifSeventy">
-            <div class="elipsa elipsa-seven my-button" @click="KoloSeventy" @keydown.enter="KoloSeventyWithFocus" tabindex="0">
+            <div class="elipsa elipsa-seven my-button" @click="KoloSeventy" @keydown.enter="KoloSeventyWithFocus"
+                tabindex="0">
                 <p>
                     75:100
                 </p>
             </div>
         </div>
         <div class="kola-elementy" v-if="storeKola.ifFifty">
-            <div class="elipsa elipsa-fifty my-button" @click="KoloFifty" @keydown.enter="KoloFiftyWithFocus" tabindex="0">
+            <div class="elipsa elipsa-fifty my-button" @click="KoloFifty" @keydown.enter="KoloFiftyWithFocus"
+                tabindex="0">
                 <p>
                     50:50
                 </p>
@@ -230,28 +289,26 @@ function PlayTimer() {
 
         <div class="container-pytanie" ref="pytanie" tabindex="0">{{ storeSceneMain.pytanie }}</div>
         <button class="button-odpowiedz my-button" ref="odp1-ref"
-            :style="{ top: storeSceneMain.odpowiedz1Polozenie[0], left: storeSceneMain.odpowiedz1Polozenie[1] }"
-            v-if="storeSceneMain.ifOdpowiedz1" @click="odpowiedz1Click" @keydown.enter="odpowiedz1ClickWithFocus">
-            {{ storeSceneMain?.odpowiedz1 }}
+            :style="{ top: storeSceneMain.odpowiedz1Polozenie[0], left: storeSceneMain.odpowiedz1Polozenie[1], backgroundColor: storeSceneMain.backgroundColorOdpowiedz1 }"
+            v-if="storeSceneMain.ifOdpowiedz1" @click="odpowiedz1Click" @keydown.enter="odpowiedz1ClickWithFocus" v-html="storeSceneMain.odpowiedz1">
+            
         </button>
         <button class="button-odpowiedz my-button" ref="odp2-ref"
-            :style="{ top: storeSceneMain.odpowiedz2Polozenie[0], left: storeSceneMain.odpowiedz2Polozenie[1] }"
-            v-if="storeSceneMain.ifOdpowiedz2" @click="odpowiedz2Click" @keydown.enter="odpowiedz2ClickWithFocus">
-            {{ storeSceneMain.odpowiedz2 }}
+            :style="{ top: storeSceneMain.odpowiedz2Polozenie[0], left: storeSceneMain.odpowiedz2Polozenie[1], backgroundColor:storeSceneMain.backgroundColorOdpowiedz2 }"
+            v-if="storeSceneMain.ifOdpowiedz2" @click="odpowiedz2Click" @keydown.enter="odpowiedz2ClickWithFocus" v-html="storeSceneMain.odpowiedz2">
+      
         </button>
         <button class="button-odpowiedz my-button" ref="odp3-ref"
-            :style="{ top: storeSceneMain.odpowiedz3Polozenie[0], left: storeSceneMain.odpowiedz3Polozenie[1] }"
-            v-if="storeSceneMain.ifOdpowiedz3" @click="odpowiedz3Click" @keydown.enter="odpowiedz3ClickWithFocus">
-            {{ storeSceneMain.odpowiedz3 }}
+            :style="{ top: storeSceneMain.odpowiedz3Polozenie[0], left: storeSceneMain.odpowiedz3Polozenie[1], backgroundColor:storeSceneMain.backgroundColorOdpowiedz3 }"
+            v-if="storeSceneMain.ifOdpowiedz3" @click="odpowiedz3Click" @keydown.enter="odpowiedz3ClickWithFocus" v-html="storeSceneMain.odpowiedz3">
         </button>
         <button class="button-odpowiedz my-button" ref="odp4-ref"
-            :style="{ top: storeSceneMain.odpowiedz4Polozenie[0], left: storeSceneMain.odpowiedz4Polozenie[1] }"
-            v-if="storeSceneMain.ifOdpowiedz4" @click="odpowiedz4Click" @keydown.enter="odpowiedz4ClickWithFocus">
-            {{ storeSceneMain.odpowiedz4 }}
+            :style="{ top: storeSceneMain.odpowiedz4Polozenie[0], left: storeSceneMain.odpowiedz4Polozenie[1], backgroundColor:storeSceneMain.backgroundColorOdpowiedz4 }"
+            v-if="storeSceneMain.ifOdpowiedz4" @click="odpowiedz4Click" @keydown.enter="odpowiedz4ClickWithFocus" v-html="storeSceneMain.odpowiedz4">
         </button>
 
         <div class="container-punktacja">
-            
+
             <div class="licznik-czasu" tabindex="0">
                 <p class="licznik-display">
                     {{ storeTime.formattedTime }}
@@ -457,7 +514,7 @@ function PlayTimer() {
     border-radius: 39px;
     background-color: #D7E2F1;
     border: 5px solid #1D5488;
-    top: 643px;
+    top: 633px;
     left: 32px;
     text-align: center;
     font-size: 36px;
@@ -485,7 +542,7 @@ function PlayTimer() {
     width: 620px;
     height: 125px;
     border-radius: 39px;
-    background-color: #D7E2F1;
+    /* background-color: #D7E2F1; */
     border: 5px solid #1D5488;
 }
 
@@ -552,7 +609,7 @@ function PlayTimer() {
 
 .button-pauza:focus {
     outline: 5px solid black;
-    outline-offset: 10px;
+    outline-offset: 7px;
 }
 
 .button-kontynuj {
@@ -573,7 +630,7 @@ function PlayTimer() {
 
 .button-kontynuj:focus {
     outline: 5px solid black;
-    outline-offset: 10px;
+    outline-offset: 7px;
 }
 
 .container-points {

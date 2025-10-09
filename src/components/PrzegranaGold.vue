@@ -40,7 +40,7 @@ function jeszczeRaz(){
             <div class="button-row">
                 <button class="button-win my-button" @click="jeszczeRaz">
                     <p class="button-text">Zagraj jeszcze raz</p>
-                    <p class="button-text">-zacznij od poziomu trudnego</p>
+                    <p class="button-text">- zacznij od poziomu trudnego</p>
                 </button>
               
             </div>

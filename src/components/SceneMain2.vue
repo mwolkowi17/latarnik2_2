@@ -73,6 +73,13 @@ async function odpowiedz1Click() {
     storeFocus.focusOff()
     await nextTick()
     storeSceneMain.Odpowiedz1(1)
+    await nextTick()
+    if(storeSceneMain.ifPrawidlowaOdpowiedz){
+        storeSceneMain.backgroundColorOdpowiedz1="#0BB717"
+    }
+    else{
+        storeSceneMain.backgroundColorOdpowiedz1="#F48506"
+    }
     storeTime.isPaused = true
     odpowiedz1Ref.value?.blur()
 }
@@ -83,6 +90,13 @@ async function odpowiedz1ClickWithFocus(event: any) {
     await nextTick()
     console.log('odp1')
     storeSceneMain.Odpowiedz1(1)
+    await nextTick()
+    if(storeSceneMain.ifPrawidlowaOdpowiedz){
+        storeSceneMain.backgroundColorOdpowiedz1="#0BB717"
+    }
+    else{
+        storeSceneMain.backgroundColorOdpowiedz1="#F48506"
+    }
     storeTime.isPaused = true
 }
 
@@ -91,6 +105,13 @@ async function odpowiedz2Click() {
     await nextTick()
     console.log('odp2')
     storeSceneMain.Odpowiedz1(2)
+    await nextTick()
+    if(storeSceneMain.ifPrawidlowaOdpowiedz){
+        storeSceneMain.backgroundColorOdpowiedz2="#0BB717"
+    }
+    else{
+        storeSceneMain.backgroundColorOdpowiedz2="#F48506"
+    }
     storeTime.isPaused = true
     odpowiedz2Ref.value?.blur()
 }
@@ -101,6 +122,13 @@ async function odpowiedz2ClickWithFocus(event: any) {
     await nextTick()
     console.log('odp2')
     storeSceneMain.Odpowiedz1(2)
+    await nextTick()
+    if(storeSceneMain.ifPrawidlowaOdpowiedz){
+        storeSceneMain.backgroundColorOdpowiedz2="#0BB717"
+    }
+    else{
+        storeSceneMain.backgroundColorOdpowiedz2="#F48506"
+    }
     storeTime.isPaused = true
 }
 
@@ -109,6 +137,13 @@ async function odpowiedz3Click() {
     await nextTick()
     console.log('odp3')
     storeSceneMain.Odpowiedz1(3)
+    await nextTick()
+    if(storeSceneMain.ifPrawidlowaOdpowiedz){
+        storeSceneMain.backgroundColorOdpowiedz3="#0BB717"
+    }
+    else{
+        storeSceneMain.backgroundColorOdpowiedz3="#F48506"
+    }
     storeTime.isPaused = true
     odpowiedz3Ref.value?.blur()
 }
@@ -119,6 +154,13 @@ async function odpowiedz3ClickWithFocus(event: any) {
     await nextTick()
     console.log('odp3')
     storeSceneMain.Odpowiedz1(3)
+    await nextTick()
+    if(storeSceneMain.ifPrawidlowaOdpowiedz){
+        storeSceneMain.backgroundColorOdpowiedz3="#0BB717"
+    }
+    else{
+        storeSceneMain.backgroundColorOdpowiedz3="#F48506"
+    }
     storeTime.isPaused = true
 }
 
@@ -127,6 +169,13 @@ async function odpowiedz4Click() {
     await nextTick()
     console.log('odp4')
     storeSceneMain.Odpowiedz1(4)
+    await nextTick()
+    if(storeSceneMain.ifPrawidlowaOdpowiedz){
+        storeSceneMain.backgroundColorOdpowiedz4="#0BB717"
+    }
+    else{
+        storeSceneMain.backgroundColorOdpowiedz4="#F48506"
+    }
     storeTime.isPaused = true
     odpowiedz4Ref.value?.blur()
 }
@@ -137,6 +186,13 @@ async function odpowiedz4ClickWithFocus(event: any) {
     await nextTick()
     console.log('odp4')
     storeSceneMain.Odpowiedz1(4)
+    await nextTick()
+    if(storeSceneMain.ifPrawidlowaOdpowiedz){
+        storeSceneMain.backgroundColorOdpowiedz4="#0BB717"
+    }
+    else{
+        storeSceneMain.backgroundColorOdpowiedz4="#F48506"
+    }
     storeTime.isPaused = true
 }
 
@@ -188,12 +244,16 @@ function KoloPodpowiedz() {
      }
 }
 
-function KoloPodpowiedzWithFocus(event: Event){
+async function KoloPodpowiedzWithFocus(event: Event){
     event.preventDefault()
-     if(!storeKola.ifSkorzystałZKola){
+    await nextTick()
+    storeFocus.ifPodpowiedzInFocus=true
+    await nextTick()
+    if(!storeKola.ifSkorzystałZKola){
     storeKola.PokazPodpowiedz()
      }
-    pytanieRef.value?.focus() 
+    //pytanieRef.value?.focus() 
+    
 }
 
 
@@ -247,22 +307,22 @@ function PlayTimer() {
 
         <div class="container-pytanie" ref="pytanie" tabindex="0">{{ storeSceneMain.pytanie }}</div>
         <button class="button-odpowiedz my-button" ref="odp1-ref"
-            :style="{ top: storeSceneMain.odpowiedz1Polozenie[0], left: storeSceneMain.odpowiedz1Polozenie[1] }"
+            :style="{ top: storeSceneMain.odpowiedz1Polozenie[0], left: storeSceneMain.odpowiedz1Polozenie[1], backgroundColor: storeSceneMain.backgroundColorOdpowiedz1 }"
             v-if="storeSceneMain.ifOdpowiedz1" @click="odpowiedz1Click" @keydown.enter="odpowiedz1ClickWithFocus">
             {{ storeSceneMain?.odpowiedz1 }}
         </button>
         <button class="button-odpowiedz my-button" ref="odp2-ref"
-            :style="{ top: storeSceneMain.odpowiedz2Polozenie[0], left: storeSceneMain.odpowiedz2Polozenie[1] }"
+            :style="{ top: storeSceneMain.odpowiedz2Polozenie[0], left: storeSceneMain.odpowiedz2Polozenie[1], backgroundColor: storeSceneMain.backgroundColorOdpowiedz2 }"
             v-if="storeSceneMain.ifOdpowiedz2" @click="odpowiedz2Click" @keydown.enter="odpowiedz2ClickWithFocus">
             {{ storeSceneMain.odpowiedz2 }}
         </button>
         <button class="button-odpowiedz my-button" ref="odp3-ref"
-            :style="{ top: storeSceneMain.odpowiedz3Polozenie[0], left: storeSceneMain.odpowiedz3Polozenie[1] }"
+            :style="{ top: storeSceneMain.odpowiedz3Polozenie[0], left: storeSceneMain.odpowiedz3Polozenie[1], backgroundColor: storeSceneMain.backgroundColorOdpowiedz3 }"
             v-if="storeSceneMain.ifOdpowiedz3" @click="odpowiedz3Click" @keydown.enter="odpowiedz3ClickWithFocus">
             {{ storeSceneMain.odpowiedz3 }}
         </button>
         <button class="button-odpowiedz my-button" ref="odp4-ref"
-            :style="{ top: storeSceneMain.odpowiedz4Polozenie[0], left: storeSceneMain.odpowiedz4Polozenie[1] }"
+            :style="{ top: storeSceneMain.odpowiedz4Polozenie[0], left: storeSceneMain.odpowiedz4Polozenie[1], backgroundColor: storeSceneMain.backgroundColorOdpowiedz4 }"
             v-if="storeSceneMain.ifOdpowiedz4" @click="odpowiedz4Click" @keydown.enter="odpowiedz4ClickWithFocus">
             {{ storeSceneMain.odpowiedz4 }}
         </button>
@@ -472,7 +532,7 @@ function PlayTimer() {
     border-radius: 39px;
     background-color: #D7E2F1;
     border: 5px solid #1D5488;
-    top: 643px;
+    top: 633px;
     left: 32px;
     text-align: center;
     font-size: 36px;
@@ -500,7 +560,7 @@ function PlayTimer() {
     width: 620px;
     height: 125px;
     border-radius: 39px;
-    background-color: #D7E2F1;
+    /* background-color: #D7E2F1; */
     border: 5px solid #1D5488;
 }
 
@@ -566,7 +626,7 @@ function PlayTimer() {
 
 .button-pauza:focus {
     outline: 5px solid black;
-    outline-offset: 10px;
+    outline-offset: 7px;
 }
 
 .button-kontynuj {
@@ -587,7 +647,7 @@ function PlayTimer() {
 
 .button-kontynuj:focus {
     outline: 5px solid black;
-    outline-offset: 10px;
+    outline-offset: 7px;
 }
 
 .container-points {

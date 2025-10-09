@@ -48,10 +48,10 @@
     {
       "id": "6",
       "pytanie": "Gdzie walczył Skawiński?",
-      "odpowiedz1": "w Hiszpanii, we Francji, na Węgrzech i w Stanach Zjednoczonych",
-      "odpowiedz2": "w Hiszpanii, w Niemczech, na Węgrzech i w Stanach Zjednoczonych",
-      "odpowiedz3": "w Holandii, we Francji, na Węgrzech i w Anglii",
-      "odpowiedz4": "w Hiszpanii, we Włoszech, na Węgrzech i w Stanach Zjednoczonych",
+      "odpowiedz1": "w Hiszpanii, we Francji, na <br>Węgrzech i w Stanach Zjednoczonych",
+      "odpowiedz2": "w Hiszpanii, w Niemczech, na <br>Węgrzech i w Stanach Zjednoczonych",
+      "odpowiedz3": "w Holandii, we Francji, na <br>Węgrzech i w Anglii",
+      "odpowiedz4": "w Hiszpanii, we Włoszech, na <br>Węgrzech i w Stanach Zjednoczonych",
       "prawidlowa_odpowiedz": "1"
     },
     {
@@ -140,10 +140,10 @@
     {
       "id": "6",
       "pytanie": "Gdzie walczył Skawiński?",
-      "odpowiedz1": "w Hiszpanii, we Włoszech, na Węgrzech i w Stanach Zjednoczonych",
-      "odpowiedz2": "w Hiszpanii, we Francji, na Węgrzech i w Stanach Zjednoczonych",
-      "odpowiedz3": "w Hiszpanii, w Niemczech, na Węgrzech i w Stanach Zjednoczonych",
-      "odpowiedz4": "w Holandii, we Francji, na Węgrzech i w Anglii",
+      "odpowiedz1": "w Hiszpanii, we Włoszech, na <br>Węgrzech i w Stanach Zjednoczonych",
+      "odpowiedz2": "w Hiszpanii, we Francji, na <br>Węgrzech i w Stanach Zjednoczonych",
+      "odpowiedz3": "w Hiszpanii, w Niemczech, na <br>Węgrzech i w Stanach Zjednoczonych",
+      "odpowiedz4": "w Holandii, we Francji, na <br>Węgrzech i w Anglii",
       "prawidlowa_odpowiedz": "2"
     },
     {
@@ -227,15 +227,15 @@
       "odpowiedz2": "„Pan Tadeusz”",
       "odpowiedz3": "„Mitologia”",
       "odpowiedz4": "„Dziady”",
-      "prawidlowa_odpowiedz": "1"
+      "prawidlowa_odpowiedz": "2"
     },
     {
       "id": "6",
       "pytanie": "Gdzie walczył Skawiński?",
-      "odpowiedz1": "w Holandii, we Francji, na Węgrzech i w Anglii",
-      "odpowiedz2": "w Hiszpanii, we Włoszech, na Węgrzech i w Stanach Zjednoczonych",
-      "odpowiedz3": "w Hiszpanii, we Francji, na Węgrzech i w Stanach Zjednoczonych",
-      "odpowiedz4": "w Hiszpanii, w Niemczech, na Węgrzech i w Stanach Zjednoczonych",
+      "odpowiedz1": "w Holandii, we Francji,na <br>Węgrzech i w Anglii",
+      "odpowiedz2": "w Hiszpanii, we Włoszech, na <br>Węgrzech i w Stanach Zjednoczonych",
+      "odpowiedz3": "w Hiszpanii, we Francji, na <br>Węgrzech i w Stanach Zjednoczonych",
+      "odpowiedz4": "w Hiszpanii, w Niemczech, na <br>Węgrzech i w Stanach Zjednoczonych",
       "prawidlowa_odpowiedz": "3"
     },
     {
@@ -365,7 +365,7 @@
       "odpowiedz3": "Skawiński stracił pracę",
       "odpowiedz4": "Skawiński trafił do aresztu",
       "prawidlowa_odpowiedz": "3",
-      "podpowiedz": "Skawiński nie mógł już dłużej pracować w latarni."
+      "podpowiedz": "Skawiński nie mógł już dłużej\npracować w latarni."
     },
     {
       "id": "10",
@@ -467,7 +467,7 @@
       "odpowiedz3": "statek uderzył w latarnię",
       "odpowiedz4": "Skawiński stracił pracę",
       "prawidlowa_odpowiedz": "4",
-      "podpowiedz": "Skawiński nie mógł już dłużej pracować w latarni."
+      "podpowiedz": "Skawiński nie mógł już dłużej\npracować w latarni."
     },
     {
       "id": "10",
@@ -569,7 +569,7 @@
       "odpowiedz3": "wybuchł pożar w porcie",
       "odpowiedz4": "statek uderzył w latarnię",
       "prawidlowa_odpowiedz": "1",
-      "podpowiedz": "Skawiński nie mógł już dłużej pracować w latarni."
+      "podpowiedz": "Skawiński nie mógł już dłużej\npracować w latarni."
     },
     {
       "id": "10",

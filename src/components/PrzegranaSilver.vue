@@ -39,7 +39,7 @@ async function jeszczeRaz() {
                 <div class="button-row">
                     <button class="my-button button-win" @click="jeszczeRaz">
                         <p class="button-text">Zagraj jeszcze raz</p>
-                        <p class="button-text">-zacznij od poziomu łatwego</p>
+                        <p class="button-text">- zacznij od poziomu łatwego</p>
                     </button>
                 </div>
         </div>

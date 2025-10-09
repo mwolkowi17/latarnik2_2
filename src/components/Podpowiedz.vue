@@ -1,12 +1,27 @@
 <script setup lang="ts">
 import { useScene2Store } from '../stores/scene2Store';
+import { useFocusStore } from '../stores/focusStore';
+import { onMounted, onUnmounted, useTemplateRef } from 'vue';
 
 const storeSceneMain = useScene2Store();
+const focusStore = useFocusStore();
+
+const podpowiedz = useTemplateRef('podpowiedz')
+
+onMounted(()=>{
+    if(focusStore.ifPodpowiedzInFocus){
+     podpowiedz.value?.focus()
+    }
+})
+
+onUnmounted(()=>{
+    focusStore.ifPodpowiedzInFocus=false
+})
 
 </script>
 
 <template>
-    <div class="container-podpowiedz">{{ storeSceneMain.podpowiedzTresc }}</div>
+    <div class="container-podpowiedz" ref="podpowiedz" tabindex="0">{{ storeSceneMain.podpowiedzTresc }}</div>
 </template>
 
 <style scoped>
@@ -25,7 +40,7 @@ const storeSceneMain = useScene2Store();
     place-content: center
 }
 
-.container-podpowiedz {
+.container-podpowiedz:focus {
     outline: 5px solid black;
     outline-offset: 10px;
 }

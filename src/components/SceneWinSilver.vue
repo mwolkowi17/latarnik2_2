@@ -40,7 +40,7 @@ function GrajDalej() {
             </div>
             <div class="text-container" ref="silver-win-ref" tabindex="0">
                 <p class="brawo">Brawo! Nagroda – srebrny puchar.</p>
-                <p class="text">Poziom łatwy - ukończony!.</p>
+                <p class="text">Poziom łatwy - ukończony!</p>
                 <p class="text">Przejdź do następnego poziomu.</p>
             </div>
             <div class="button-row">

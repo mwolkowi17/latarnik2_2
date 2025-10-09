@@ -7,6 +7,7 @@ export const useFocusStore = defineStore("focus2", () => {
   const ifZlaOdpowiedzInFocus = ref(false);
   const ifWinGoldInFocus = ref(false);
   const ifPrzegranaGoldInFocus = ref(false);
+  const ifPodpowiedzInFocus = ref(false);
 
   function focusOn() {
     ifPrawidlowaOdpowiedzInFocus.value = true;
@@ -29,6 +30,7 @@ export const useFocusStore = defineStore("focus2", () => {
     ifZlaOdpowiedzInFocus,
     ifWinGoldInFocus,
     ifPrzegranaGoldInFocus,
+    ifPodpowiedzInFocus,
     focusOn,
     focusOff,
   };
