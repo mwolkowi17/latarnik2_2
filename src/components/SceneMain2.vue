@@ -233,7 +233,7 @@ function KoloFifty() {
 function KoloFiftyWithFocus(event: Event){
     event.preventDefault()
     if(!storeKola.ifSkorzystałZKola){
-    storeKola.UsunJedna()
+    storeKola.UsunDwie()
      }
     pytanieRef.value?.focus() 
 }

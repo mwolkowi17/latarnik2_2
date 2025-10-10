@@ -219,7 +219,7 @@ export const useScene2Store = defineStore("storeScene2", () => {
     if (ramkaPunktacjaWysokosc.value === pointsPosition.pozycjaRamki[8]) {
       puntkyCzytaj = "odpowiedź za cztery złote monety";
     }
-    if (ramkaPunktacjaWysokosc.value === pointsPosition.pozycjaRamki[8]) {
+    if (ramkaPunktacjaWysokosc.value === pointsPosition.pozycjaRamki[9]) {
       puntkyCzytaj = "odpowiedź premiowana złotym pucharem";
     }
     return puntkyCzytaj;

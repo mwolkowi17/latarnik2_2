@@ -151,6 +151,11 @@ transform: rotate(45deg);
     position: absolute;
 }
 
+.button-win:focus{
+    outline: 5px solid black;
+    outline-offset: 10px;
+}
+
 .button-text{
     margin-top: 0px;
     margin-bottom: 0px;
