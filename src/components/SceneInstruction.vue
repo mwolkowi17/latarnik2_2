@@ -2,6 +2,7 @@
 import { useMainCompStore } from '../stores/mainCompStore';
 import { useFocusStore } from '../stores/focusStore';
 import { nextTick } from 'vue';
+import instrukcja_reader from '../lib/aria-texty.json'
 
 const storeMainComp = useMainCompStore();
 const storeFocus = useFocusStore();
@@ -61,7 +62,7 @@ async function grajWithFocus(event: any) {
                         <p class="podpis-1"></p>
                     </div>
                 </div>
-                <ul class="zasady" tabindex="0">
+                <ul class="zasady" tabindex="0" :aria-label="instrukcja_reader.instrukcja">
                     <li>Gra polega na udzieleniu poprawnej odpowiedzi na 10 pytań, podzielonych na dwa poziomy
                         trudności: łatwy i trudny. Twoim
                         celem jest ukończenie gry i zdobycie złotego pucharu.</li>

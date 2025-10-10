@@ -2,6 +2,7 @@
 import { useMainCompStore } from '../stores/mainCompStore';
 import { onMounted,onUnmounted,useTemplateRef } from 'vue'
 import { useFocusStore } from '../stores/focusStore';
+import ariatekst from '../lib/aria-texty.json';
 
 const storeFocus = useFocusStore()
 const storeMainComp = useMainCompStore();
@@ -38,7 +39,7 @@ function GrajDalej() {
             <div class="circle">
                 <img class="ikona" src="../assets/puchar_silver.png" width="191px" height="227px" />
             </div>
-            <div class="text-container" ref="silver-win-ref" tabindex="0">
+            <div class="text-container" ref="silver-win-ref" tabindex="0" :aria-label="ariatekst.komunikatSrebrny">
                 <p class="brawo">Brawo! Nagroda – srebrny puchar.</p>
                 <p class="text">Poziom łatwy - ukończony!</p>
                 <p class="text">Przejdź do następnego poziomu.</p>

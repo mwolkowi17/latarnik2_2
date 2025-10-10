@@ -2,6 +2,7 @@
 import {useMainCompStore} from '../stores/mainCompStore'
 import { onMounted,onUnmounted,useTemplateRef } from 'vue'
 import { useFocusStore } from '../stores/focusStore';
+import ariatekst from '../lib/aria-texty.json'
 
 
 const storeMainComp = useMainCompStore();
@@ -35,7 +36,7 @@ function jeszczeRaz(){
                 <div class="przekontna przekontna-a"></div>
                 <div class="przekontna przekontna-b"></div>
             </div>
-            <p class="brawo" ref="przegrana-ref" tabindex="0">Przegrana.</p>
+            <p class="brawo" ref="przegrana-ref" tabindex="0" :aria-label="ariatekst.komunikatPrzegrana">Przegrana.</p>
            
             <div class="button-row">
                 <button class="button-win my-button" @click="jeszczeRaz">

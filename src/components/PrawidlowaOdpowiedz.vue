@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { onMounted,useTemplateRef } from 'vue'
 import { useFocusStore } from '../stores/focusStore';
+import ariatekst from '../lib/aria-texty.json'
 
 const storeFocus = useFocusStore()
 
@@ -15,7 +16,7 @@ onMounted(()=>{
 </script>
 
 <template>
-<div class="container-prawidlowa-odpowiedz" ref="prawidlowa-odpowiedz-info" tabindex="0">
+<div class="container-prawidlowa-odpowiedz" ref="prawidlowa-odpowiedz-info" tabindex="0" :aria-label="ariatekst.komunikatDobraOdpowiedz">
     <img class="ikona" src="../assets/dobra_odp.png" width="97px" height="93px"/>
     <p class="brawo">Brawo!</p>
     <p class="text">Prawidłowa odpowiedź.</p>

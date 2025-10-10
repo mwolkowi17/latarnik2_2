@@ -1,0 +1,8 @@
+{
+  "instrukcja": "Gra polega na udzieleniu poprawnej odpowiedzi na 10 pytań, podzielonych na dwa poziom trudności: łatwy i trudny. Twoim celem jest ukończenie gry i zdobycie złotego pucharu. Każde pytanie ma cztery opcje odpowiedzi. Masz 20 sekund, żeby odpowiedzieć na każde pytanie.Na poziomie łatwym masz do dyspozycji trzy koła ratunkowe, a na poziomie trudnym cztery koła ratunkowe, które możesz wykorzytać tylko raz. Za każdą prawidłową odpowiedź zdobywasz monety. Przy poprawnej odpowiedzi na pytanie 5, czyli po ukończeniu poziomu łatwego masz zagwarantowaną wygraną - srebrny Puchar. Jeżeli udzielisz niepoprawnej odpowiedzi na poziomie łatwym, rozpoczynasz grę od nowa, jeżeli źle odpowiesz na poziomie trudnym, rozpoczynasz grę od pierwszego pytania na poziomie trudnym. Kiedy ukończysz grę, możesz zagrać jeszcze raz.",
+  "komunikatZlaOdpowiedz": "Niestety, zła odpowiedź",
+  "komunikatDobraOdpowiedz": "Brawo, prawidłowa odpowiedź",
+  "komunikatPrzegrana": "Przegrana.",
+  "komunikatSrebrny": "Brawo! Nagroda – srebrny puchar. Poziom łatwy - ukończony! Przejdź do następnego poziomu.",
+  "komunikatZloty": "Gratulacje! Nagroda – złoty puchar. Poziom trudny - ukończony!"
+}

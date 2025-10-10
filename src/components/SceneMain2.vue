@@ -309,7 +309,7 @@ function PlayTimer() {
         <PrawidlowaOdpowiedz class="component-prawidlowa-odpowiedz" v-if="storeSceneMain.ifPrawidlowaOdpowiedz" />
         <ZlaOdpowiedz class="component-zla-odpowiedz" v-if="storeSceneMain.ifZlaOdpowiedz" />
 
-        <div class="container-pytanie" ref="pytanie" tabindex="0">{{ storeSceneMain.pytanie }}</div>
+        <div class="container-pytanie" ref="pytanie" tabindex="0" :aria-label="storeSceneMain.pytanie">{{ storeSceneMain.pytanie }}</div>
         <button class="button-odpowiedz my-button" ref="odp1-ref"
             :style="{ top: storeSceneMain.odpowiedz1Polozenie[0], left: storeSceneMain.odpowiedz1Polozenie[1], backgroundColor: storeSceneMain.backgroundColorOdpowiedz1 }"
             v-if="storeSceneMain.ifOdpowiedz1" @click="odpowiedz1Click" @keydown.enter="odpowiedz1ClickWithFocus">

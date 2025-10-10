@@ -17,11 +17,10 @@ onMounted(()=>{
 onUnmounted(()=>{
     focusStore.ifPodpowiedzInFocus=false
 })
-
 </script>
 
 <template>
-    <div class="container-podpowiedz" ref="podpowiedz" tabindex="0">{{ storeSceneMain.podpowiedzTresc }}</div>
+    <div class="container-podpowiedz" ref="podpowiedz" tabindex="0" :aria-label="storeSceneMain.podpowiedzTresc">{{ storeSceneMain.podpowiedzTresc }}</div>
 </template>
 
 <style scoped>

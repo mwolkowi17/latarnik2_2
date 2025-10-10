@@ -4,6 +4,7 @@ import { useKolaStore } from '../stores/storeKola';
 import { useTimerStore } from '../stores/timerStore';
 import { onMounted,onUnmounted,useTemplateRef } from 'vue'
 import { useFocusStore } from '../stores/focusStore';
+import ariatekst from '../lib/aria-texty.json';
 
   const storeMainComp = useMainCompStore();
   const storeKola = useKolaStore()
@@ -48,7 +49,7 @@ onUnmounted(()=>{
             <div class="circle">
                 <img class="ikona" src="../assets/puchar_gold.png" width="191px" height="227px" />
             </div>
-            <div class="text-container" ref="silver-win-ref" tabindex="0">
+            <div class="text-container" ref="silver-win-ref" tabindex="0" :aria-label="ariatekst.komunikatZloty">
             <p class="brawo">Gratulacje!</p>
             <p class="text text-nagroda">Nagroda – złoty puchar.</p>
             <p class="text">Poziom trudny - ukończony!</p>
