@@ -7,8 +7,20 @@ import SceneWinGold from './SceneWinGold.vue'
 import PrzegranaSilver from './PrzegranaSilver.vue'
 import PrzegranaGold from './PrzegranaGold.vue'
 import  {useMainCompStore} from '../stores/mainCompStore'
+import { preloadImages } from '../lib/preloader'
+import { images } from '../lib/image-list'
+import { onMounted, ref } from 'vue'
 
 const store=useMainCompStore()
+
+// preload images
+const newImages = ref<string[]>([])
+
+onMounted(async () => {
+    await preloadImages(images)
+
+    newImages.value = images
+})
 </script>
 
 <template>

@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { onMounted,useTemplateRef } from 'vue'
+import { nextTick, onMounted,useTemplateRef } from 'vue'
 import { useFocusStore } from '../stores/focusStore';
 import ariatekst from '../lib/aria-texty.json'
 
@@ -8,10 +8,15 @@ const storeFocus = useFocusStore()
 //referencje do el html używane do obsługi focusa
 const prawidlowaOdpowiedzRef = useTemplateRef('prawidlowa-odpowiedz-info')
 
-onMounted(()=>{
+
+onMounted(async()=>{
     if(storeFocus.ifPrawidlowaOdpowiedzInFocus){
         prawidlowaOdpowiedzRef.value?.focus()
     }
+    const sound_dobrze = new Audio(new URL('../assets/Dobra_odp.mp3', import.meta.url).href);
+        await nextTick()
+        sound_dobrze.play()
+
 })
 </script>
 

@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { useMainCompStore } from '../stores/mainCompStore';
-import { onMounted,onUnmounted,useTemplateRef } from 'vue'
+import { onMounted,onUnmounted,useTemplateRef,nextTick } from 'vue'
 import { useFocusStore } from '../stores/focusStore';
 import ariatekst from '../lib/aria-texty.json';
 
@@ -9,10 +9,14 @@ const storeMainComp = useMainCompStore();
 
 const silverWinRef = useTemplateRef('silver-win-ref')
 
-onMounted(()=>{
+onMounted(async()=>{
  if(storeFocus.ifWinSilverInFocus){
     silverWinRef.value?.focus()
  }
+  const sound_wygrana = new Audio(new URL('../assets/fanfary.mp3', import.meta.url).href);
+        await nextTick()
+        sound_wygrana.play()
+
 })
 
 onUnmounted(()=>{

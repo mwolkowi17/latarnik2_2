@@ -12,6 +12,8 @@ onMounted(()=>{
     if(storeFocus.ifZlaOdpowiedzInFocus){
         zlaOdpowiedzRef.value?.focus()
     }
+    const sound_zle = new Audio(new URL('../assets/zla_odp.mp3', import.meta.url).href);
+    sound_zle.play();
 })
 
 

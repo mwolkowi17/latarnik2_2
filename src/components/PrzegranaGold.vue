@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import {useMainCompStore} from '../stores/mainCompStore'
-import { onMounted,onUnmounted,useTemplateRef } from 'vue'
+import { onMounted,onUnmounted,useTemplateRef,nextTick } from 'vue'
 import { useFocusStore } from '../stores/focusStore';
 import ariatekst from '../lib/aria-texty.json'
 
@@ -10,10 +10,13 @@ const storeFocus = useFocusStore()
 
 const silverPrzegranaRef = useTemplateRef("przegrana-ref")
 
-onMounted(()=>{
+onMounted(async()=>{
     if(storeFocus.ifPrzegranaSilverInFocus){
         silverPrzegranaRef.value?.focus()
     }
+    const sound_przegrana=new Audio(new URL('../assets/przegrana_gra.mp3', import.meta.url).href);
+    await nextTick()
+    sound_przegrana.play()
 })
 
 onUnmounted(()=>{

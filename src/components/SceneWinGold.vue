@@ -2,57 +2,60 @@
 import { useMainCompStore } from '../stores/mainCompStore';
 import { useKolaStore } from '../stores/storeKola';
 import { useTimerStore } from '../stores/timerStore';
-import { onMounted,onUnmounted,useTemplateRef } from 'vue'
+import { onMounted, onUnmounted, useTemplateRef, nextTick } from 'vue'
 import { useFocusStore } from '../stores/focusStore';
 import ariatekst from '../lib/aria-texty.json';
 
-  const storeMainComp = useMainCompStore();
-  const storeKola = useKolaStore()
-  const storeTime = useTimerStore();
-  const storeFocus = useFocusStore()
+const storeMainComp = useMainCompStore();
+const storeKola = useKolaStore()
+const storeTime = useTimerStore();
+const storeFocus = useFocusStore()
 
-  const silverWinRef = useTemplateRef('silver-win-ref')
+const silverWinRef = useTemplateRef('silver-win-ref')
 
-  onMounted(()=>{
- if(storeFocus.ifWinSilverInFocus){
-    silverWinRef.value?.focus()
- }
+onMounted(async () => {
+    if (storeFocus.ifWinSilverInFocus) {
+        silverWinRef.value?.focus()
+    }
+    const sound_wygrana = new Audio(new URL('../assets/fanfary.mp3', import.meta.url).href);
+    await nextTick()
+    sound_wygrana.play()
 })
 
-onUnmounted(()=>{
-    storeFocus.ifWinSilverInFocus=false
+onUnmounted(() => {
+    storeFocus.ifWinSilverInFocus = false
 })
 
-  function ZagrajJeszcze(){
-    storeMainComp.ifWinGold=false
-    storeMainComp.ifMain1=true
-     storeKola.ifWymien=true
-    storeKola.ifFifty=true
-    storeKola.ifSeventy=true
-    storeTime.isPaused=false
-  }
+function ZagrajJeszcze() {
+    storeMainComp.ifWinGold = false
+    storeMainComp.ifMain1 = true
+    storeKola.ifWymien = true
+    storeKola.ifFifty = true
+    storeKola.ifSeventy = true
+    storeTime.isPaused = false
+}
 
-  function ZakończGre(){
-    storeMainComp.ifWinGold=false
-    storeMainComp.ifInstruction=true
-     storeKola.ifWymien=true
-    storeKola.ifFifty=true
-    storeKola.ifSeventy=true
-    storeTime.isPaused=false
-    
-  }
+function ZakończGre() {
+    storeMainComp.ifWinGold = false
+    storeMainComp.ifInstruction = true
+    storeKola.ifWymien = true
+    storeKola.ifFifty = true
+    storeKola.ifSeventy = true
+    storeTime.isPaused = false
+
+}
 </script>
 
 <template>
-<div class="tlo">
+    <div class="tlo">
         <div class="container-win-silver">
             <div class="circle">
                 <img class="ikona" src="../assets/puchar_gold.png" width="191px" height="227px" />
             </div>
             <div class="text-container" ref="silver-win-ref" tabindex="0" :aria-label="ariatekst.komunikatZloty">
-            <p class="brawo">Gratulacje!</p>
-            <p class="text text-nagroda">Nagroda – złoty puchar.</p>
-            <p class="text">Poziom trudny - ukończony!</p>
+                <p class="brawo">Gratulacje!</p>
+                <p class="text text-nagroda">Nagroda – złoty puchar.</p>
+                <p class="text">Poziom trudny - ukończony!</p>
             </div>
             <div class="button-row">
                 <button class="my-button button-win" @click="ZagrajJeszcze">
@@ -121,7 +124,7 @@ onUnmounted(()=>{
     margin-bottom: 0px;
 }
 
-.text-nagroda{
+.text-nagroda {
     font-size: 64px;
 }
 
