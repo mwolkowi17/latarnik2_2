@@ -303,7 +303,7 @@
       "odpowiedz1": "z Nowego Jorku",
       "odpowiedz2": "z Warszawy",
       "odpowiedz3": "z Paryża",
-      "odpowiedz4": "z Aspinwal",
+      "odpowiedz4": "z Aspinwall",
       "prawidlowa_odpowiedz": "1",
       "podpowiedz": "To miasto w Ameryce."
     },
@@ -402,7 +402,7 @@
     {
       "id": "3",
       "pytanie": "Skąd przyszła paczka z książką „Pan Tadeusz”?",
-      "odpowiedz1": "z Aspinwal",
+      "odpowiedz1": "z Aspinwall",
       "odpowiedz2": "z Nowego Jorku",
       "odpowiedz3": "z Warszawy",
       "odpowiedz4": "z Paryża",
@@ -505,7 +505,7 @@
       "id": "3",
       "pytanie": "Skąd przyszła paczka z książką „Pan Tadeusz”?",
       "odpowiedz1": "z Paryża",
-      "odpowiedz2": "z Aspinwal",
+      "odpowiedz2": "z Aspinwall",
       "odpowiedz3": "z Nowego Jorku",
       "odpowiedz4": "z Warszawy",
       "prawidlowa_odpowiedz": "3",

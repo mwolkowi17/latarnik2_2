@@ -70,7 +70,7 @@ async function grajWithFocus(event: any) {
                     </li>
                     <li>Na poziomie łatwym masz do dyspozycji trzy koła ratunkowe, a na poziomie trudnym cztery koła
                         ratunkowe, które możesz
-                        wykorzytać tylko raz.</li>
+                        wykorzystać tylko raz.</li>
                     <li>Za każdą prawidłową odpowiedź zdobywasz monety. Przy poprawnej odpowiedzi na pytanie 5, czyli po
                         ukończeniu poziomu
                         łatwego masz zagwarantowaną wygraną - srebrny Puchar.</li>
