@@ -28,6 +28,9 @@ export const useSceneStore = defineStore("storeScene1", () => {
   const ifOdpowiedz3 = ref(true);
   const ifOdpowiedz4 = ref(true);
 
+  //blokowanie odpowiedzi
+  const ifZablokowanaOdpowiedz = ref(false);
+
   //refy do elementów
   const pytanieTempRef = ref<HTMLElement | null>(null);
 
@@ -124,7 +127,7 @@ export const useSceneStore = defineStore("storeScene1", () => {
     console.log(kolekcjaPytan.value);
     await nextTick();
     console.log("oczekiwana odpowiedz:" + nrOdpowiedziDobrej.value);
-
+    ifZablokowanaOdpowiedz.value = false;
     //to tylko informacyjne w wer developerskiej, na produkcji usunąć
     if (nrKolejki.value === 5) {
       console.log("koniec etapu1");
@@ -249,6 +252,7 @@ export const useSceneStore = defineStore("storeScene1", () => {
     odpowiedz2,
     odpowiedz3,
     odpowiedz4,
+    ifZablokowanaOdpowiedz,
     backgroundColorOdpowiedz1,
     backgroundColorOdpowiedz2,
     backgroundColorOdpowiedz3,

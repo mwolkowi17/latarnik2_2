@@ -66,6 +66,7 @@ function JeszczRaz() {
 }
 
 async function odpowiedz1Click() {
+    if(!storeSceneMain.ifZablokowanaOdpowiedz){
     console.log('odp1')
     storeFocus.focusOff()
     await nextTick()
@@ -79,9 +80,12 @@ async function odpowiedz1Click() {
     }
     storeTime.isPaused = true
     odpowiedz1Ref.value?.blur()
+    storeSceneMain.ifZablokowanaOdpowiedz=true
+}
 }
 
 async function odpowiedz1ClickWithFocus(event: any) {
+    if(!storeSceneMain.ifZablokowanaOdpowiedz){
     event.preventDefault()
     storeFocus.focusOn()
     await nextTick()
@@ -95,9 +99,12 @@ async function odpowiedz1ClickWithFocus(event: any) {
         storeSceneMain.backgroundColorOdpowiedz1="#F48506"
     }
     storeTime.isPaused = true
+    storeSceneMain.ifZablokowanaOdpowiedz=true
+}
 }
 
 async function odpowiedz2Click() {
+    if(!storeSceneMain.ifZablokowanaOdpowiedz){
     storeFocus.focusOff()
     await nextTick()
     console.log('odp2')
@@ -111,9 +118,12 @@ async function odpowiedz2Click() {
     }
     storeTime.isPaused = true
     odpowiedz2Ref.value?.blur()
+    storeSceneMain.ifZablokowanaOdpowiedz=true
+}
 }
 
 async function odpowiedz2ClickWithFocus(event: any) {
+    if(!storeSceneMain.ifZablokowanaOdpowiedz){
     event.preventDefault()
     storeFocus.focusOn()
     await nextTick()
@@ -127,9 +137,12 @@ async function odpowiedz2ClickWithFocus(event: any) {
         storeSceneMain.backgroundColorOdpowiedz2="#F48506"
     }
     storeTime.isPaused = true
+    storeSceneMain.ifZablokowanaOdpowiedz=true
+}
 }
 
 async function odpowiedz3Click() {
+    if(!storeSceneMain.ifZablokowanaOdpowiedz){
     storeFocus.focusOff()
     await nextTick()
     console.log('odp3')
@@ -143,9 +156,12 @@ async function odpowiedz3Click() {
     }
     storeTime.isPaused = true
     odpowiedz3Ref.value?.blur()
+    storeSceneMain.ifZablokowanaOdpowiedz=true
+}
 }
 
 async function odpowiedz3ClickWithFocus(event: any) {
+    if(!storeSceneMain.ifZablokowanaOdpowiedz){
     event.preventDefault()
     storeFocus.focusOn
     await nextTick()
@@ -159,9 +175,12 @@ async function odpowiedz3ClickWithFocus(event: any) {
         storeSceneMain.backgroundColorOdpowiedz3="#F48506"
     }
     storeTime.isPaused = true
+    storeSceneMain.ifZablokowanaOdpowiedz=true
+}
 }
 
 async function odpowiedz4Click() {
+    if(!storeSceneMain.ifZablokowanaOdpowiedz){
     storeFocus.focusOff
     await nextTick()
     console.log('odp4')
@@ -175,9 +194,12 @@ async function odpowiedz4Click() {
     }
     storeTime.isPaused = true
     odpowiedz4Ref.value?.blur()
+    storeSceneMain.ifZablokowanaOdpowiedz=true
+}
 }
 
 async function odpowiedz4ClickWithFocus(event: any) {
+    if(!storeSceneMain.ifZablokowanaOdpowiedz){
     event.preventDefault()
     storeFocus.focusOn
     await nextTick()
@@ -191,6 +213,8 @@ async function odpowiedz4ClickWithFocus(event: any) {
         storeSceneMain.backgroundColorOdpowiedz4="#F48506"
     }
     storeTime.isPaused = true
+    storeSceneMain.ifZablokowanaOdpowiedz=true
+}
 }
 
 function KoloWymien() {
