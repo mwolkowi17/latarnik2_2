@@ -66,155 +66,155 @@ function JeszczRaz() {
 }
 
 async function odpowiedz1Click() {
-    if(!storeSceneMain.ifZablokowanaOdpowiedz){
-    console.log('odp1')
-    storeFocus.focusOff()
-    await nextTick()
-    storeSceneMain.Odpowiedz1(1)
-    await nextTick()
-    if(storeSceneMain.ifPrawidlowaOdpowiedz){
-        storeSceneMain.backgroundColorOdpowiedz1="#0BB717"
+    if (!storeSceneMain.ifZablokowanaOdpowiedz) {
+        console.log('odp1')
+        storeFocus.focusOff()
+        await nextTick()
+        storeSceneMain.Odpowiedz1(1)
+        await nextTick()
+        if (storeSceneMain.ifPrawidlowaOdpowiedz) {
+            storeSceneMain.backgroundColorOdpowiedz1 = "#0BB717"
+        }
+        else {
+            storeSceneMain.backgroundColorOdpowiedz1 = "#F48506"
+        }
+        storeTime.isPaused = true
+        odpowiedz1Ref.value?.blur()
+        storeSceneMain.ifZablokowanaOdpowiedz = true
     }
-    else{
-        storeSceneMain.backgroundColorOdpowiedz1="#F48506"
-    }
-    storeTime.isPaused = true
-    odpowiedz1Ref.value?.blur()
-    storeSceneMain.ifZablokowanaOdpowiedz=true
-}
 }
 
 async function odpowiedz1ClickWithFocus(event: any) {
-    if(!storeSceneMain.ifZablokowanaOdpowiedz){
-    event.preventDefault()
-    storeFocus.focusOn()
-    await nextTick()
-    console.log('odp1')
-    storeSceneMain.Odpowiedz1(1)
-     await nextTick()
-    if(storeSceneMain.ifPrawidlowaOdpowiedz){
-        storeSceneMain.backgroundColorOdpowiedz1="#0BB717"
+    if (!storeSceneMain.ifZablokowanaOdpowiedz) {
+        event.preventDefault()
+        storeFocus.focusOn()
+        await nextTick()
+        console.log('odp1')
+        storeSceneMain.Odpowiedz1(1)
+        await nextTick()
+        if (storeSceneMain.ifPrawidlowaOdpowiedz) {
+            storeSceneMain.backgroundColorOdpowiedz1 = "#0BB717"
+        }
+        else {
+            storeSceneMain.backgroundColorOdpowiedz1 = "#F48506"
+        }
+        storeTime.isPaused = true
+        storeSceneMain.ifZablokowanaOdpowiedz = true
     }
-    else{
-        storeSceneMain.backgroundColorOdpowiedz1="#F48506"
-    }
-    storeTime.isPaused = true
-    storeSceneMain.ifZablokowanaOdpowiedz=true
-}
 }
 
 async function odpowiedz2Click() {
-    if(!storeSceneMain.ifZablokowanaOdpowiedz){
-    storeFocus.focusOff()
-    await nextTick()
-    console.log('odp2')
-    storeSceneMain.Odpowiedz1(2)
-     await nextTick()
-    if(storeSceneMain.ifPrawidlowaOdpowiedz){
-        storeSceneMain.backgroundColorOdpowiedz2="#0BB717"
+    if (!storeSceneMain.ifZablokowanaOdpowiedz) {
+        storeFocus.focusOff()
+        await nextTick()
+        console.log('odp2')
+        storeSceneMain.Odpowiedz1(2)
+        await nextTick()
+        if (storeSceneMain.ifPrawidlowaOdpowiedz) {
+            storeSceneMain.backgroundColorOdpowiedz2 = "#0BB717"
+        }
+        else {
+            storeSceneMain.backgroundColorOdpowiedz2 = "#F48506"
+        }
+        storeTime.isPaused = true
+        odpowiedz2Ref.value?.blur()
+        storeSceneMain.ifZablokowanaOdpowiedz = true
     }
-    else{
-        storeSceneMain.backgroundColorOdpowiedz2="#F48506"
-    }
-    storeTime.isPaused = true
-    odpowiedz2Ref.value?.blur()
-    storeSceneMain.ifZablokowanaOdpowiedz=true
-}
 }
 
 async function odpowiedz2ClickWithFocus(event: any) {
-    if(!storeSceneMain.ifZablokowanaOdpowiedz){
-    event.preventDefault()
-    storeFocus.focusOn()
-    await nextTick()
-    console.log('odp2')
-    storeSceneMain.Odpowiedz1(2)
-     await nextTick()
-    if(storeSceneMain.ifPrawidlowaOdpowiedz){
-        storeSceneMain.backgroundColorOdpowiedz2="#0BB717"
+    if (!storeSceneMain.ifZablokowanaOdpowiedz) {
+        event.preventDefault()
+        storeFocus.focusOn()
+        await nextTick()
+        console.log('odp2')
+        storeSceneMain.Odpowiedz1(2)
+        await nextTick()
+        if (storeSceneMain.ifPrawidlowaOdpowiedz) {
+            storeSceneMain.backgroundColorOdpowiedz2 = "#0BB717"
+        }
+        else {
+            storeSceneMain.backgroundColorOdpowiedz2 = "#F48506"
+        }
+        storeTime.isPaused = true
+        storeSceneMain.ifZablokowanaOdpowiedz = true
     }
-    else{
-        storeSceneMain.backgroundColorOdpowiedz2="#F48506"
-    }
-    storeTime.isPaused = true
-    storeSceneMain.ifZablokowanaOdpowiedz=true
-}
 }
 
 async function odpowiedz3Click() {
-    if(!storeSceneMain.ifZablokowanaOdpowiedz){
-    storeFocus.focusOff()
-    await nextTick()
-    console.log('odp3')
-    storeSceneMain.Odpowiedz1(3)
-     await nextTick()
-    if(storeSceneMain.ifPrawidlowaOdpowiedz){
-        storeSceneMain.backgroundColorOdpowiedz3="#0BB717"
+    if (!storeSceneMain.ifZablokowanaOdpowiedz) {
+        storeFocus.focusOff()
+        await nextTick()
+        console.log('odp3')
+        storeSceneMain.Odpowiedz1(3)
+        await nextTick()
+        if (storeSceneMain.ifPrawidlowaOdpowiedz) {
+            storeSceneMain.backgroundColorOdpowiedz3 = "#0BB717"
+        }
+        else {
+            storeSceneMain.backgroundColorOdpowiedz3 = "#F48506"
+        }
+        storeTime.isPaused = true
+        odpowiedz3Ref.value?.blur()
+        storeSceneMain.ifZablokowanaOdpowiedz = true
     }
-    else{
-        storeSceneMain.backgroundColorOdpowiedz3="#F48506"
-    }
-    storeTime.isPaused = true
-    odpowiedz3Ref.value?.blur()
-    storeSceneMain.ifZablokowanaOdpowiedz=true
-}
 }
 
 async function odpowiedz3ClickWithFocus(event: any) {
-    if(!storeSceneMain.ifZablokowanaOdpowiedz){
-    event.preventDefault()
-    storeFocus.focusOn
-    await nextTick()
-    console.log('odp3')
-    storeSceneMain.Odpowiedz1(3)
-     await nextTick()
-    if(storeSceneMain.ifPrawidlowaOdpowiedz){
-        storeSceneMain.backgroundColorOdpowiedz3="#0BB717"
+    if (!storeSceneMain.ifZablokowanaOdpowiedz) {
+        event.preventDefault()
+        storeFocus.focusOn
+        await nextTick()
+        console.log('odp3')
+        storeSceneMain.Odpowiedz1(3)
+        await nextTick()
+        if (storeSceneMain.ifPrawidlowaOdpowiedz) {
+            storeSceneMain.backgroundColorOdpowiedz3 = "#0BB717"
+        }
+        else {
+            storeSceneMain.backgroundColorOdpowiedz3 = "#F48506"
+        }
+        storeTime.isPaused = true
+        storeSceneMain.ifZablokowanaOdpowiedz = true
     }
-    else{
-        storeSceneMain.backgroundColorOdpowiedz3="#F48506"
-    }
-    storeTime.isPaused = true
-    storeSceneMain.ifZablokowanaOdpowiedz=true
-}
 }
 
 async function odpowiedz4Click() {
-    if(!storeSceneMain.ifZablokowanaOdpowiedz){
-    storeFocus.focusOff
-    await nextTick()
-    console.log('odp4')
-    storeSceneMain.Odpowiedz1(4)
-     await nextTick()
-    if(storeSceneMain.ifPrawidlowaOdpowiedz){
-        storeSceneMain.backgroundColorOdpowiedz4="#0BB717"
+    if (!storeSceneMain.ifZablokowanaOdpowiedz) {
+        storeFocus.focusOff
+        await nextTick()
+        console.log('odp4')
+        storeSceneMain.Odpowiedz1(4)
+        await nextTick()
+        if (storeSceneMain.ifPrawidlowaOdpowiedz) {
+            storeSceneMain.backgroundColorOdpowiedz4 = "#0BB717"
+        }
+        else {
+            storeSceneMain.backgroundColorOdpowiedz4 = "#F48506"
+        }
+        storeTime.isPaused = true
+        odpowiedz4Ref.value?.blur()
+        storeSceneMain.ifZablokowanaOdpowiedz = true
     }
-    else{
-        storeSceneMain.backgroundColorOdpowiedz4="#F48506"
-    }
-    storeTime.isPaused = true
-    odpowiedz4Ref.value?.blur()
-    storeSceneMain.ifZablokowanaOdpowiedz=true
-}
 }
 
 async function odpowiedz4ClickWithFocus(event: any) {
-    if(!storeSceneMain.ifZablokowanaOdpowiedz){
-    event.preventDefault()
-    storeFocus.focusOn
-    await nextTick()
-    console.log('odp4')
-    storeSceneMain.Odpowiedz1(4)
-     await nextTick()
-    if(storeSceneMain.ifPrawidlowaOdpowiedz){
-        storeSceneMain.backgroundColorOdpowiedz4="#0BB717"
+    if (!storeSceneMain.ifZablokowanaOdpowiedz) {
+        event.preventDefault()
+        storeFocus.focusOn
+        await nextTick()
+        console.log('odp4')
+        storeSceneMain.Odpowiedz1(4)
+        await nextTick()
+        if (storeSceneMain.ifPrawidlowaOdpowiedz) {
+            storeSceneMain.backgroundColorOdpowiedz4 = "#0BB717"
+        }
+        else {
+            storeSceneMain.backgroundColorOdpowiedz4 = "#F48506"
+        }
+        storeTime.isPaused = true
+        storeSceneMain.ifZablokowanaOdpowiedz = true
     }
-    else{
-        storeSceneMain.backgroundColorOdpowiedz4="#F48506"
-    }
-    storeTime.isPaused = true
-    storeSceneMain.ifZablokowanaOdpowiedz=true
-}
 }
 
 function KoloWymien() {
@@ -311,38 +311,43 @@ function PlayTimer() {
         <PrawidlowaOdpowiedz class="component-prawidlowa-odpowiedz" v-if="storeSceneMain.ifPrawidlowaOdpowiedz" />
         <ZlaOdpowiedz class="component-zla-odpowiedz" v-if="storeSceneMain.ifZlaOdpowiedz" />
 
-        <div class="container-pytanie" ref="pytanie" tabindex="0" :aria-label="storeSceneMain.pytanie">{{ storeSceneMain.pytanie }}</div>
+        <div class="container-pytanie" ref="pytanie" tabindex="0" :aria-label="storeSceneMain.pytanie">{{
+            storeSceneMain.pytanie }}</div>
         <button class="button-odpowiedz my-button" ref="odp1-ref"
             :style="{ top: storeSceneMain.odpowiedz1Polozenie[0], left: storeSceneMain.odpowiedz1Polozenie[1], backgroundColor: storeSceneMain.backgroundColorOdpowiedz1 }"
-            v-if="storeSceneMain.ifOdpowiedz1" @click="odpowiedz1Click" @keydown.enter="odpowiedz1ClickWithFocus" v-html="storeSceneMain.odpowiedz1">
-            
+            v-if="storeSceneMain.ifOdpowiedz1" @click="odpowiedz1Click" @keydown.enter="odpowiedz1ClickWithFocus"
+            v-html="storeSceneMain.odpowiedz1">
+
         </button>
         <button class="button-odpowiedz my-button" ref="odp2-ref"
-            :style="{ top: storeSceneMain.odpowiedz2Polozenie[0], left: storeSceneMain.odpowiedz2Polozenie[1], backgroundColor:storeSceneMain.backgroundColorOdpowiedz2 }"
-            v-if="storeSceneMain.ifOdpowiedz2" @click="odpowiedz2Click" @keydown.enter="odpowiedz2ClickWithFocus" v-html="storeSceneMain.odpowiedz2">
-      
+            :style="{ top: storeSceneMain.odpowiedz2Polozenie[0], left: storeSceneMain.odpowiedz2Polozenie[1], backgroundColor: storeSceneMain.backgroundColorOdpowiedz2 }"
+            v-if="storeSceneMain.ifOdpowiedz2" @click="odpowiedz2Click" @keydown.enter="odpowiedz2ClickWithFocus"
+            v-html="storeSceneMain.odpowiedz2">
+
         </button>
         <button class="button-odpowiedz my-button" ref="odp3-ref"
-            :style="{ top: storeSceneMain.odpowiedz3Polozenie[0], left: storeSceneMain.odpowiedz3Polozenie[1], backgroundColor:storeSceneMain.backgroundColorOdpowiedz3 }"
-            v-if="storeSceneMain.ifOdpowiedz3" @click="odpowiedz3Click" @keydown.enter="odpowiedz3ClickWithFocus" v-html="storeSceneMain.odpowiedz3">
+            :style="{ top: storeSceneMain.odpowiedz3Polozenie[0], left: storeSceneMain.odpowiedz3Polozenie[1], backgroundColor: storeSceneMain.backgroundColorOdpowiedz3 }"
+            v-if="storeSceneMain.ifOdpowiedz3" @click="odpowiedz3Click" @keydown.enter="odpowiedz3ClickWithFocus"
+            v-html="storeSceneMain.odpowiedz3">
         </button>
         <button class="button-odpowiedz my-button" ref="odp4-ref"
-            :style="{ top: storeSceneMain.odpowiedz4Polozenie[0], left: storeSceneMain.odpowiedz4Polozenie[1], backgroundColor:storeSceneMain.backgroundColorOdpowiedz4 }"
-            v-if="storeSceneMain.ifOdpowiedz4" @click="odpowiedz4Click" @keydown.enter="odpowiedz4ClickWithFocus" v-html="storeSceneMain.odpowiedz4">
+            :style="{ top: storeSceneMain.odpowiedz4Polozenie[0], left: storeSceneMain.odpowiedz4Polozenie[1], backgroundColor: storeSceneMain.backgroundColorOdpowiedz4 }"
+            v-if="storeSceneMain.ifOdpowiedz4" @click="odpowiedz4Click" @keydown.enter="odpowiedz4ClickWithFocus"
+            v-html="storeSceneMain.odpowiedz4">
         </button>
 
         <div class="container-punktacja">
 
             <div class="licznik-czasu" tabindex="0" :aria-label="storeTime.timeScene1Local.toString()">
-                
+
                 <p class="licznik-display">
                     {{ storeTime.formattedTime }}
                 </p>
             </div>
             <button class="my-button button-pauza" @click="PauseTimer">Pauza</button>
             <button class="my-button button-kontynuj" @click="PlayTimer">Kontynuj</button>
-            <div class="ramka-punktacja" :style="{ top: storeSceneMain.ramkaPunktacjaWysokosc + 'px' }" 
-            tabindex="0" :aria-label="storeSceneMain.czytajPunkty()">
+            <div class="ramka-punktacja" :style="{ top: storeSceneMain.ramkaPunktacjaWysokosc + 'px' }" tabindex="0"
+                :aria-label="storeSceneMain.czytajPunkty()">
             </div>
             <div class="container-points">
                 <div class="punktacja-row">

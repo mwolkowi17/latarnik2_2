@@ -2,7 +2,7 @@ import { defineStore } from "pinia";
 import { ref, nextTick } from "vue";
 import gameData from "../lib/pytania.json";
 import pointsPosition from "../lib/pozycjaRamki.json";
-import polozenieOdpowiedzi from "../lib/odpowiedziPozycje.json";
+//import polozenieOdpowiedzi from "../lib/odpowiedziPozycje.json";
 import { metodyPomocnicze } from "../lib/metody-pomocnicze";
 import { useMainCompStore } from "../stores/mainCompStore";
 import { useTimerStore } from "./timerStore";
@@ -35,35 +35,15 @@ export const useSceneStore = defineStore("storeScene1", () => {
   const pytanieTempRef = ref<HTMLElement | null>(null);
 
   //położenie odpowiedzi, po zmianach położenie odpowiedzi jest stałe, ale na razie zostawiam...
-  const nrKolekcjiPolozenPytan = ref(0);
+  // const nrKolekcjiPolozenPytan = ref(0);
 
-  const odpowiedz1Polozenie = ref([
-    polozenieOdpowiedzi.pozycjeOdpowiedzi[nrKolekcjiPolozenPytan.value]?.[0]
-      ?.top ?? "",
-    polozenieOdpowiedzi.pozycjeOdpowiedzi[nrKolekcjiPolozenPytan.value]?.[0]
-      ?.left ?? "",
-  ]);
+  const odpowiedz1Polozenie = ref(["786px", "32px"]);
 
-  const odpowiedz2Polozenie = ref([
-    polozenieOdpowiedzi.pozycjeOdpowiedzi[nrKolekcjiPolozenPytan.value]?.[1]
-      ?.top ?? "",
-    polozenieOdpowiedzi.pozycjeOdpowiedzi[nrKolekcjiPolozenPytan.value]?.[1]
-      ?.left ?? "",
-  ]);
+  const odpowiedz2Polozenie = ref(["786px", "675px"]);
 
-  const odpowiedz3Polozenie = ref([
-    polozenieOdpowiedzi.pozycjeOdpowiedzi[nrKolekcjiPolozenPytan.value]?.[2]
-      ?.top ?? "",
-    polozenieOdpowiedzi.pozycjeOdpowiedzi[nrKolekcjiPolozenPytan.value]?.[2]
-      ?.left ?? "",
-  ]);
+  const odpowiedz3Polozenie = ref(["930px", "32px"]);
 
-  const odpowiedz4Polozenie = ref([
-    polozenieOdpowiedzi.pozycjeOdpowiedzi[nrKolekcjiPolozenPytan.value]?.[3]
-      ?.top ?? "",
-    polozenieOdpowiedzi.pozycjeOdpowiedzi[nrKolekcjiPolozenPytan.value]?.[3]
-      ?.left ?? "",
-  ]);
+  const odpowiedz4Polozenie = ref(["930px", "675px"]);
 
   //położenie ramki punktacji
   const ramkaPunktacjaWysokosc = ref(pointsPosition.pozycjaRamki[0]);
@@ -93,7 +73,6 @@ export const useSceneStore = defineStore("storeScene1", () => {
 
   //metoda dodajaca losowo pytania
   async function addQuestionLevel1() {
-    //await nextTick();
     ifOdpowiedz1.value = true;
     ifOdpowiedz2.value = true;
     ifOdpowiedz3.value = true;
@@ -257,7 +236,7 @@ export const useSceneStore = defineStore("storeScene1", () => {
     backgroundColorOdpowiedz2,
     backgroundColorOdpowiedz3,
     backgroundColorOdpowiedz4,
-    nrKolekcjiPolozenPytan,
+    //nrKolekcjiPolozenPytan,
     odpowiedz1Polozenie,
     odpowiedz2Polozenie,
     odpowiedz3Polozenie,
